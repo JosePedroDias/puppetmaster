@@ -8,10 +8,10 @@ export async function puppet({ dims, pos, url, devtools, headless, sessionDir })
   const browser = await puppeteer.launch({
     headless,
     devtools,
-    defaultViewport: {
+    /*defaultViewport: {
       width: W,
       height: H,
-    },
+    },*/
     args: [
       "--no-sandbox",
       "--disable-setuid-sandbox",
@@ -30,10 +30,10 @@ export async function puppet({ dims, pos, url, devtools, headless, sessionDir })
   context.overridePermissions(origin, ["geolocation", "notifications"]);
   const [page] = await context.pages();
   await page.setViewport({
-    // TODO this should not be needed?
     width: W,
     height: Math.floor(0.88 * H),
   });
+  await page.setViewport(null); // so the viewport changes on resize
   await page.goto(url);
   return page;
 }
