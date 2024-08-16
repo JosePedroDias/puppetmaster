@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "puppetmaster",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "puppetmaster.mjs",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^22.11.0",
+    "shelljs": "^0.8.5",
+    "systeminformation": "^5.22.11"
+  }
+}
